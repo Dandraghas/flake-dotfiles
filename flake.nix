@@ -55,7 +55,7 @@
       url = "github:GermanBread/declarative-flatpak/stable-v3";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     hm = {

@@ -28,9 +28,9 @@
       enable = true;
       plugins = [
         "git"
-        "catimg" 
-        "zoxide" 
-        "gh" 
+        "catimg"
+        "zoxide"
+        "gh"
         "eza"
         "colored-man-pages"
       ];

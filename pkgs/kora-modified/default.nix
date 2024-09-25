@@ -1,18 +1,18 @@
-{ lib
-, stdenvNoCC
-, fetchFromGitHub
-, gtk3
-, adwaita-icon-theme
-, breeze-icons
-, hicolor-icon-theme
-, gitUpdater
+{
+  lib,
+  stdenvNoCC,
+  fetchFromGitHub,
+  gtk3,
+  adwaita-icon-theme,
+  breeze-icons,
+  hicolor-icon-theme,
+  gitUpdater,
 }:
-
-stdenvNoCC.mkDerivation rec  {
+stdenvNoCC.mkDerivation rec {
   pname = "kora-modified";
   version = "d37ed16579657a849a41db44ddc94c65381a128a";
 
-  src = fetchFromGitHub  {
+  src = fetchFromGitHub {
     owner = "Dandraghas";
     repo = "kora";
     rev = "${version}";
@@ -52,8 +52,8 @@ stdenvNoCC.mkDerivation rec  {
   meta = with lib; {
     description = "An SVG icon theme in four variants";
     homepage = "https://github.com/Dandraghas/kora";
-    license = with licenses; [ gpl3Only ];
+    license = with licenses; [gpl3Only];
     platforms = platforms.linux;
-    maintainers = with maintainers; [ romildo ];
+    maintainers = with maintainers; [romildo];
   };
 }

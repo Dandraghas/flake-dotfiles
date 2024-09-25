@@ -22,8 +22,11 @@
   };
 
   home.packages = with pkgs; [
-    (catppuccin-kde.override { flavour = [ "mocha" ]; accents = [ "blue" ]; })
-    (inputs.self.packages.${pkgs.system}.macsequoia-kde.override { colorVariants = [ "dark" ]; })
+    (catppuccin-kde.override {
+      flavour = ["mocha"];
+      accents = ["blue"];
+    })
+    (inputs.self.packages.${pkgs.system}.macsequoia-kde.override {colorVariants = ["dark"];})
     inputs.self.packages.${pkgs.system}.kora-modified
     colloid-gtk-theme
     whitesur-cursors

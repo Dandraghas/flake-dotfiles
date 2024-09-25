@@ -1,14 +1,11 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   systemd.user.services.autolock = {
     Unit = {
       Description = "Hack to automatically lock the screen.";
-      After = [ "graphical-session.target" ];
+      After = ["graphical-session.target"];
     };
     Install = {
-      WantedBy = [ "graphical-session.target" ];
+      WantedBy = ["graphical-session.target"];
     };
     Service = {
       ExecStart = "${pkgs.writeShellScript "autolock" ''
