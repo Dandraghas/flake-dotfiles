@@ -1,11 +1,14 @@
 {pkgs, ...}: {
   programs.virt-manager.enable = true;
-  virtualisation.libvirtd.enable = true;
 
-  virtualisation.libvirtd.qemu = {
-    swtpm.enable = true;
-    ovmf.packages = [pkgs.OVMFFull.fd];
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+      qemu = {
+        swtpm.enable = true;
+        ovmf.packages = [pkgs.OVMFFull.fd];
+      };
+    };
+    spiceUSBRedirection.enable = true;
   };
-
-  virtualisation.spiceUSBRedirection.enable = true;
 }

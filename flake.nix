@@ -11,11 +11,7 @@
         ./pkgs
       ];
 
-      perSystem = {
-        config,
-        pkgs,
-        ...
-      }: {
+      perSystem = {pkgs, ...}: {
         devShells.default = pkgs.mkShell {
           packages = [
             pkgs.alejandra

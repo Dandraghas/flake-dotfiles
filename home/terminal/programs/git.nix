@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
-  cfg = config.programs.git;
-in {
+{pkgs, ...}: {
   home.packages = [pkgs.gh];
 
   programs.git = {

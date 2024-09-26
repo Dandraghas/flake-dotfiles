@@ -4,7 +4,7 @@
     package = pkgs.bluez5-experimental;
     settings = {
       General = {
-        FastConnectable = true; # Consumes more power, but who cares?
+        FastConnectable = true;
         JustWorksRepairing = "always";
         Privacy = "device";
         Experimental = true;
