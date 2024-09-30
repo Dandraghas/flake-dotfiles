@@ -5,7 +5,6 @@
 }: {
   qt = {
     enable = true;
-    platformTheme.name = "kde";
   };
 
   programs.plasma = {
@@ -26,6 +25,7 @@
     })
     (inputs.self.packages.${pkgs.system}.macsequoia-kde.override {colorVariants = ["dark"];})
     inputs.self.packages.${pkgs.system}.kora-modified
+    inputs.self.packages.${pkgs.system}.vinyl-theme
     colloid-gtk-theme
     whitesur-cursors
   ];

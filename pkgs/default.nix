@@ -5,6 +5,7 @@
     packages = {
       kora-modified = pkgs.callPackage ./kora-modified {};
       macsequoia-kde = pkgs.callPackage ./macsequoia-kde {};
+      vinyl-theme = pkgs.callPackage ./vinyl-theme {};
     };
   };
 }
