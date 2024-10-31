@@ -3,6 +3,6 @@
     ./messengers
     ./browsers/firefox.nix
     #./gtk.nix
-    ./qt.nix
+    ./kde.nix
   ];
 }
