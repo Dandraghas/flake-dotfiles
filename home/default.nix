@@ -2,7 +2,6 @@
   imports = [
     ./terminal
     ./services
-    ./flatpak
     ./editors/jetbrains.nix
     inputs.nix-index-db.hmModules.nix-index
     inputs.plasma-manager.homeManagerModules.plasma-manager
