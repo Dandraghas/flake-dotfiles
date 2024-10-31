@@ -20,5 +20,7 @@
     loader = {
       grub.enable = true;
     };
+
+    plymouth.enable = true;
   };
 }
