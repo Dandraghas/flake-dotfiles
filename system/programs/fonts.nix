@@ -6,7 +6,7 @@
 
       # Sans(Serif) fonts
       noto-fonts
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       noto-fonts-emoji
       roboto
       (google-fonts.override {fonts = ["Inter"];})
@@ -15,7 +15,7 @@
       jetbrains-mono
 
       # nerdfonts
-      (nerdfonts.override {fonts = ["FiraMono"];})
+      (nerdfonts.override {fonts = ["FiraMono" "Hack"];})
     ];
 
     # causes more issues than it solves
