@@ -38,14 +38,14 @@ stdenv.mkDerivation rec {
     kdePackages.wrapQtAppsHook
   ];
 
-  passthru.updateScript = unstableGitUpdater { };
+  passthru.updateScript = unstableGitUpdater {};
 
   meta = with lib; {
     description = "Theme for KDE Plasma";
     mainProgram = "vinyl-settings6";
     homepage = "https://github.com/ekaaty/vinyl-theme";
-    license = with licenses; [ gpl2Plus gpl3Plus ];
+    license = with licenses; [gpl2Plus gpl3Plus];
     platforms = platforms.linux;
-    maintainers = [ maintainers.dandraghas ];
+    maintainers = [maintainers.dandraghas];
   };
 }
