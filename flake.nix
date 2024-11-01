@@ -6,21 +6,35 @@
       systems = ["x86_64-linux"];
 
       imports = [
+        inputs.git-hooks-nix.flakeModule
         ./home/profiles
         ./hosts
         ./pkgs
       ];
 
-      perSystem = {pkgs, ...}: {
-        devShells.default = pkgs.mkShell {
-          packages = [
-            pkgs.alejandra
-            pkgs.git
-            pkgs.nodePackages.prettier
-          ];
-          name = "dots";
-          DIRENV_LOG_FORMAT = "";
+      perSystem = {
+        pkgs,
+        config,
+        ...
+      }: {
+        pre-commit = {
+          check.enable = true;
+          settings = {
+            excludes = [
+              "hardware-configuration.nix"
+            ];
+            hooks = {
+              alejandra.enable = true;
+              deadnix.enable = true;
+              statix = {
+                enable = true;
+                settings.ignore = ["hardware-configuration.nix"]; # https://github.com/cachix/git-hooks.nix/issues/288
+              };
+            };
+          };
         };
+
+        devShells.default = config.pre-commit.devShell;
 
         formatter = pkgs.alejandra;
       };
@@ -33,6 +47,12 @@
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    git-hooks-nix = {
+      url = "github:cachix/git-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-compat.follows = "flake-compat";
     };
 
     flake-compat.url = "github:edolstra/flake-compat";
