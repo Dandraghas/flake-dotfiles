@@ -18,7 +18,7 @@
     ];
   };
 
-  system.stateVersion = lib.mkDefault "23.11";
+  system.stateVersion = lib.mkDefault "24.05";
 
   time.timeZone = lib.mkDefault "Europe/Bucharest";
 

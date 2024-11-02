@@ -26,4 +26,6 @@
   services = {
     fstrim.enable = true;
   };
+
+  system.stateVersion = lib.mkForce "24.05";
 }

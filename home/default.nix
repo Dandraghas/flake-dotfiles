@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  lib,
+  ...
+}: {
   imports = [
     ./terminal
     ./services
@@ -11,7 +15,7 @@
   home = {
     username = "dandraghas";
     homeDirectory = "/home/dandraghas";
-    stateVersion = "23.11";
+    stateVersion = lib.mkDefault "24.05";
     extraOutputsToInstall = ["doc" "devdoc"];
   };
 
